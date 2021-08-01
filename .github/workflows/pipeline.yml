@@ -46,6 +46,6 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_BUMB: patch
+          DEFAULT_BUMP: patch
           INITIAL_VERSION: "0.1.0"
           VERBOSE: true
