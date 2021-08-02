@@ -45,7 +45,7 @@ jobs:
         uses: anothrNick/github-tag-action@1.33.0
         if: ${{ github.event_name == 'push'&& !contains(join(github.event.commits.*.message), '#skip') }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           DEFAULT_BUMP: patch
           INITIAL_VERSION: "0.1.0"
           VERBOSE: true
@@ -56,7 +56,7 @@ jobs:
           status: ${{ job.status }}
           fields: repo,message,commit,author,took 
           env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
       - name: Failure notification to slack
         uses: 8398a7/action-slack@v3
         if: ${{ failure() }} 
@@ -64,4 +64,4 @@ jobs:
           status: ${{ job.status }}
           fields: all
           env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  
+          SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}  
